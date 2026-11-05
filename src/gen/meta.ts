@@ -1,6 +1,6 @@
 // Generated from docs/api/open-api.yaml by sdks/tools (pnpm sdk:gen) — do not edit.
 /** The JS SDK's version (it follows the open API's). */
-export const VERSION = '1.0.0-rc.1';
+export const VERSION = '1.0.0-rc.2';
 /** The single issuer (the plain-browser fallback signs in there); `config({ issuer })` overrides it. */
 export const DEFAULT_ISSUER = 'https://id.ichinese.cn';
 /** Where each region's web serves the single-file build of this SDK. */

@@ -1,0 +1,43 @@
+{
+  "name": "@ichinese/open-js-sdk",
+  "version": "1.0.0-rc.1",
+  "description": "Web JS SDK for iChinese open platform web apps: the login bridge (requestAuthCode) in the desktop and mobile apps, falling back to OIDC in a plain browser, and the container's methods",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node build.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ichinese-cn/open-sdk-js.git"
+  },
+  "homepage": "https://github.com/ichinese-cn/open-sdk-js#readme",
+  "bugs": {
+    "url": "https://github.com/ichinese-cn/open-sdk-js/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "esbuild": "0.28.2",
+    "happy-dom": "21.0.1",
+    "typescript": "5.9.3",
+    "vitest": "5.0.4"
+  }
+}

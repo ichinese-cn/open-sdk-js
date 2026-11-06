@@ -1,6 +1,6 @@
 {
   "name": "@ichinese/open-js-sdk",
-  "version": "1.0.0-rc.2",
+  "version": "1.0.0-rc.3",
   "description": "Web JS SDK for iChinese open platform web apps: the login bridge (requestAuthCode) in the desktop and mobile apps, falling back to OIDC in a plain browser, and the container's methods",
   "license": "MIT",
   "type": "module",

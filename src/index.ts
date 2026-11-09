@@ -43,7 +43,9 @@ export interface Config {
   issuer?: string;
   /** Where the issuer sends the browser back (registered in the developer console; default: this page). */
   redirectUri?: string;
-  /** Scopes to ask for in the browser fallback besides `openid` (in a container: all the app declares). */
+  /** Declared browser scopes besides `openid`, e.g. `profile`, `phone`, `email`.
+   * Containers offer all declared scopes; each optional scope needs the user’s consent.
+   * Read approved contacts with getUserInfo in the backend SDK. */
   scopes?: string[];
 }
 

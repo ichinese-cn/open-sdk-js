@@ -1,6 +1,6 @@
 # iChinese Open Platform JS SDK
 
-> **Prerelease 1.0.0-rc.6.** 这是预发布版，开放平台还没有正式开放，SDK 的默认地址可能连不上。This is a prerelease: the open platform is not open to the public yet, so the SDK's default address may not answer.
+> **Prerelease 1.0.0-rc.7.** 这是预发布版，开放平台还没有正式开放，SDK 的默认地址可能连不上。This is a prerelease: the open platform is not open to the public yet, so the SDK's default address may not answer.
 
 爱中文开放平台的网页 JS SDK：应用的网页在桌面端、手机 App 和普通浏览器里用同一套代码登录，并调用容器的方法。
 

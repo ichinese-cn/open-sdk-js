@@ -26,16 +26,19 @@ beforeEach(() => {
 afterEach(() => vi.restoreAllMocks());
 
 describe('in a container', () => {
-  it('ready() asks the container for its environment', async () => {
-    const sent = installContainer(() => ({
-      ok: true,
-      result: { container: 'desktop', container_version: '0.1.0', locale: 'zh-CN', theme: 'dark', app_id: 'cn.cli_x' },
-    }));
-    const env = await ichinese.ready();
-    expect(env).toMatchObject({ container: 'desktop', locale: 'zh-CN', theme: 'dark', appId: 'cn.cli_x' });
-    expect(sent[0]).toMatchObject({ v: 1, method: 'env' });
-    expect(ichinese.inContainer()).toBe(true);
-  });
+  it.each<ichinese.Container>(['desktop', 'ios', 'android', 'harmonyos'])(
+    'ready() reports the environment of the %s container',
+    async (container) => {
+      const sent = installContainer(() => ({
+        ok: true,
+        result: { container, container_version: '0.1.0', locale: 'zh-CN', theme: 'dark', app_id: 'cn.cli_x' },
+      }));
+      const env = await ichinese.ready();
+      expect(env).toMatchObject({ container, locale: 'zh-CN', theme: 'dark', appId: 'cn.cli_x' });
+      expect(sent[0]).toMatchObject({ v: 1, method: 'env' });
+      expect(ichinese.inContainer()).toBe(true);
+    },
+  );
 
   it('requestAuthCode() gets the code from the bridge, passing scopes asked again', async () => {
     const sent = installContainer((m) =>

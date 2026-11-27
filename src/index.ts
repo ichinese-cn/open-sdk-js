@@ -6,7 +6,7 @@
  *   import * as ichinese from '@ichinese/open-js-sdk';
  *
  *   ichinese.config({ appId: 'cn.cli_…' });
- *   const env = await ichinese.ready();          // { container: 'desktop' | 'ios' | 'android' | 'browser', … }
+ *   const env = await ichinese.ready();          // { container: 'desktop' | 'ios' | 'android' | 'harmonyos' | 'browser', … }
  *   const r = await ichinese.requestAuthCode();  // in a container: straight from the bridge
  *   await fetch('/api/login', { method: 'POST', body: JSON.stringify(r) });   // your backend: exchangeAuthCode
  *
@@ -21,7 +21,7 @@ import { redirect, takeResult } from './oidc.ts';
 export { BridgeError } from './bridge.ts';
 export { BRIDGE_PROTOCOL, DEFAULT_ISSUER, SCRIPT_URL, VERSION } from './gen/meta.ts';
 
-export type Container = 'desktop' | 'ios' | 'android' | 'browser';
+export type Container = 'desktop' | 'ios' | 'android' | 'harmonyos' | 'browser';
 
 export interface Env {
   container: Container;
